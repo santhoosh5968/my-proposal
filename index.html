@@ -65,13 +65,13 @@
             color: #555;
         }
         .logo {
-            width: 800px;
+            width: 250px; /* Adjusted width to a more typical logo size */
             height: auto;
-           
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background: #ffffff; /* White background for logo */
-            padding: 10px; /* Padding to create a card effect */
+            /* Removed styling for the "card" effect */
+            /* border-radius: 0.5rem; */
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+            /* background: #ffffff; */
+            /* padding: 10px; */
         }
 
         /* Header (Home Slide) Specific Styling */
@@ -195,6 +195,94 @@
             flex-shrink: 0;
         }
 
+        /* Team & Investment Section Specific Styling */
+        #team-investment h2 {
+            color: #3A7BD5; /* Blue for section title */
+            margin-bottom: 25px;
+            font-size: 2.6em;
+        }
+        #team-investment .team-intro {
+            margin-bottom: 30px;
+            font-style: italic;
+            font-size: 1.2em;
+            max-width: 800px;
+            color: #495057; /* Ensure consistent text color */
+        }
+        #team-investment > p:not(.team-intro) { /* Paragraph directly under h2 */
+            margin-bottom: 30px;
+        }
+
+        .investment-models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 20px;
+        }
+        .investment-card {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            text-align: left;
+            border-top: 4px solid #A044A9; /* Magenta accent */
+        }
+        .investment-card h3 {
+            color: #A044A9; /* Magenta for pricing model titles */
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .investment-card .role-rate {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .investment-card .role-rate strong {
+            color: #3A7BD5; /* Blue for roles */
+            display: block;
+            margin-bottom: 4px;
+        }
+        .investment-card .role-rate .rate-value {
+            font-weight: bold;
+            color: #005f73; /* Teal for actual rates */
+        }
+        .investment-card .role-rate br + span { /* Style for description line */
+            font-size: 0.85em;
+            color: #6c757d;
+            display: inline-block;
+            margin-top: 2px;
+        }
+
+        .investment-card p.model-description {
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #495057;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        .investment-card ul {
+            list-style: disc;
+            margin-left: 20px;
+            padding-left: 0;
+            text-align: left;
+        }
+        .investment-card ul li {
+            font-size: 0.9em;
+            color: #495057;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        #team-investment .final-pricing-note { /* For the final italic note */
+            margin-top: 30px;
+            font-size: 1em;
+            font-style: italic;
+            max-width: 800px;
+            color: #495057; /* Ensure consistent text color */
+        }
+
+
         /* Call to Action Styling */
         .cta-button {
             background-color: #00a896;
@@ -213,8 +301,61 @@
             transform: scale(1.05);
         }
 
+        /* New Prepared By Section Styling (replaces footer) */
+        #prepared-by-info {
+            min-height: auto; /* Allow natural height */
+            padding: 50px 40px;
+            background-color: #002342; /* Dark blue background */
+            color: #eef2f7; /* Light text */
+            border-bottom: none; /* No border at the very end */
+            border-top: 1px solid #3A7BD5; /* Blue accent border top */
+        }
+        #prepared-by-info .prepared-by-content {
+            max-width: 700px;
+            margin: 0 auto; /* Center content */
+            text-align: center; /* Ensure all content within this div is centered */
+        }
+        #prepared-by-info h3 {
+            color: #ffffff; /* White heading */
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #3A7BD5; /* Blue accent line */
+            padding-bottom: 10px;
+            display: inline-block; /* To make border only under text */
+        }
+        #prepared-by-info p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #e0e0e0; /* Lighter grey text */
+            margin-bottom: 8px;
+        }
+        #prepared-by-info strong { /* For "Covenant Synergy" in this section */
+            color: #ffffff;
+        }
+        #prepared-by-info .contact-details {
+            font-size: 1em;
+            color: #b0c4de; /* Light steel blue for contact details */
+            line-height: 1.6;
+        }
+        #prepared-by-info .contact-details a {
+            color: #8db9dd; /* Lighter blue for links */
+            text-decoration: none;
+        }
+        #prepared-by-info .contact-details a:hover {
+            text-decoration: underline;
+            color: #ffffff;
+        }
+        #prepared-by-info .final-note {
+            margin-top: 20px;
+            font-size: 0.9em;
+            font-style: italic;
+            color: #b0c4de;
+        }
+
+
         /* Responsive Adjustments */
         @media (max-width: 768px) {
+            .slide { padding: 50px 20px; }
             .slide h1 { font-size: 2.2em; }
             .slide h2 { font-size: 1.8em; }
             .slide p { font-size: 1em; }
@@ -222,6 +363,17 @@
             #cover .subtitle, #home .subtitle { font-size: 1.2em; }
             #expertise .expertise-grid { grid-template-columns: 1fr; }
             .logo { width: 150px; }
+
+            /* Responsive for Team & Investment */
+            #team-investment h2 { font-size: 2em; }
+            #team-investment .team-intro { font-size: 1.1em; }
+            .investment-models-grid { grid-template-columns: 1fr; }
+            .investment-card h3 { font-size: 1.3em; }
+            .investment-card .role-rate { font-size: 1em; }
+            #team-investment .final-pricing-note { font-size: 0.9em; }
+            #prepared-by-info { padding: 30px 15px; }
+            #prepared-by-info h3 { font-size: 1.5em; }
+            #prepared-by-info p { font-size: 1em; }
         }
     </style>
 </head>
@@ -347,11 +499,76 @@
         </ul>
     </section>
 
+    <section id="team-investment" class="slide">
+        <h2>Our Team & Flexible Investment Models</h2>
+        <p class="team-intro">Covenant Synergy is a lean, agile team of 6 dedicated Salesforce professionals. Led by our CEO & Project Manager, Santhosh Kumar Motagatla, who also actively engages in technical delivery, we ensure direct expert involvement in your project. Our structure includes a hands-on Technical Lead and four versatile Salesforce Developer/Administrators, all proficient across various Salesforce tools and technologies. This cohesive structure allows us to be nimble, responsive, and cost-effective.</p>
+        <p>We offer transparent and flexible investment models to suit your specific project needs and budget (indicative rates in USD, subject to project scope):</p>
+        <div class="investment-models-grid">
+            <div class="investment-card">
+                <h3>Hourly Rate Model</h3>
+                <p class="model-description">Ideal for projects with evolving scopes, ad-hoc support, or when you need flexible access to our expertise. Indicative rates vary by role:</p>
+                <ul>
+                    <li>
+                        <strong>Project Manager / Principal Salesforce Consultant (Santhosh K.M.):</strong> <span class="rate-value">$65 - $85 / hour</span><br>
+                        <span>(Strategic oversight, client management, solution architecture, expert technical contribution & operations management)</span>
+                    </li>
+                    <li>
+                        <strong>Technical Lead / Senior Salesforce Consultant:</strong> <span class="rate-value">$50 - $70 / hour</span><br>
+                        <span>(Advanced development, technical design leadership, mentorship, complex problem-solving & hands-on delivery)</span>
+                    </li>
+                    <li>
+                        <strong>Salesforce Developer / Administrator:</strong> <span class="rate-value">$35 - $50 / hour</span><br>
+                        <span>(Versatile development, configuration, administration, testing, and support across Salesforce clouds and tools like OmniStudio, LWC, Chatbots etc.)</span>
+                    </li>
+                </ul>
+                <p class="model-description" style="margin-top:15px;"><em>Specific rates are finalized based on project complexity, duration, and the precise skills required. We ensure competitive pricing for our startup clients.</em></p>
+            </div>
+            <div class="investment-card">
+                <h3>Project-Based Pricing</h3>
+                <p class="model-description">For projects with a well-defined scope, deliverables, and timeline, we provide a fixed project investment. This offers predictability in your budgeting and is determined after a thorough discovery and solution design phase.</p>
+                <ul>
+                    <li>Clear Scope of Work (SOW) document.</li>
+                    <li>Defined deliverables and milestones.</li>
+                    <li>Fixed cost, providing budget certainty and peace of mind.</li>
+                </ul>
+            </div>
+            <div class="investment-card">
+                <h3>Retainer & Managed Services</h3>
+                <p class="model-description">For ongoing Salesforce administration, support, maintenance, and minor enhancements, we offer retainer packages. This ensures you have dedicated access to our team for a set number of hours per month or for specific service level agreements (SLAs), providing continuous value.</p>
+                <ul>
+                    <li>Proactive platform monitoring and maintenance.</li>
+                    <li>Guaranteed support hours and response times.</li>
+                    <li>Regular system health checks and optimization recommendations.</li>
+                </ul>
+            </div>
+        </div>
+        <p class="final-pricing-note"><em>We are committed to providing exceptional value. All investment options will be discussed transparently to find the best fit for your requirements and to support your growth as a valued partner.</em></p>
+    </section>
+
     <section id="cta" class="slide">
         <h2>Let's Forge Your Salesforce Future</h2>
         <p>Ready to transform your business with the power of intelligent Salesforce solutions? Covenant Synergy is here to help you navigate every step of your digital transformation journey. Let's discuss your unique challenges and explore how we can tailor a Salesforce strategy that delivers exceptional results.</p>
         <a href="mailto:operations@covenantsynergy.in?subject=Salesforce Proposal Inquiry" class="cta-button">Schedule Your Free Consultation</a>
         <p style="margin-top:30px; font-size:1em;">Or call us at: +91 85559 65614</p>
     </section>
+
+    <section id="prepared-by-info" class="slide">
+        <div class="prepared-by-content">
+            <h3>Proposal Prepared By</h3>
+            <p>
+                <strong>Covenant Synergy</strong>
+            </p>
+            <p class="contact-details">
+                Santhosh Kumar Motagatla, CEO & Project Manager<br>
+                <a href="mailto:operations@covenantsynergy.in">operations@covenantsynergy.in</a> | +91 85559 65614<br>
+                <a href="https://covenantsynergy.in/" target="_blank">covenantsynergy.in</a>
+            </p>
+            <p class="final-note">
+                Driven by Expertise & Innovation in Salesforce Solutions.<br>
+                We look forward to partnering with you.
+            </p>
+        </div>
+    </section>
+
 </body>
 </html>
